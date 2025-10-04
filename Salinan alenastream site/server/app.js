@@ -1,4 +1,8 @@
 // server/app.js
+// server/app.js
+import dotenv from "dotenv";
+dotenv.config(); // 🚀 ini HARUS paling atas, sebelum import lain
+
 import path from "path";
 import express from "express";
 import cookieParser from "cookie-parser";
@@ -16,7 +20,7 @@ import secureStream from "./routes/secureStream.js";
 import { initDB } from "./models/initdb.js";
 
 import db from "./db.js";
-import dotenv from "dotenv";
+
 
 
 
@@ -209,9 +213,8 @@ app.post("/withdraw", requireAuth, (req, res) => {
 });
 
 
-dotenv.config();
 
-app.use("/api/auth", authRoutes);
+
 // === Route lain ===
 app.use("/admin", adminRoutes);
 app.use("/api/auth", authRoutes);
