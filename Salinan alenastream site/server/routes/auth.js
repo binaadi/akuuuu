@@ -5,9 +5,6 @@ import jwt from "jsonwebtoken";
 import { cookieOpts } from "../middleware/requireAuth.js";
 import db from "../db.js";
 
-
-
-
 import rateLimit from "express-rate-limit";
 
 
